@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="userService" class="com.kuang.pojo.UserServiceImpl"/>
+    <bean id="logs" class="com.kuang.pojo.Logs"/>
+    <bean id="afterlogs" class="com.kuang.pojo.AfterLogs"/>
+
+<!--    第一种方法 使用Spring API-->
+<!--    <aop:config>-->
+<!--        <aop:pointcut id="pointcut" expression="execution(* com.kuang.pojo.UserServiceImpl.* (..))"/>-->
+<!--        <aop:advisor advice-ref="afterlogs" pointcut-ref="pointcut"/>-->
+<!--        <aop:advisor advice-ref="logs" pointcut-ref="pointcut"/>-->
+<!--    </aop:config>-->
+<!--    第二种方法使用 自定义方法-->
+    <bean id="diyPoint" class="com.kuang.pojo.DiyPoint"/>
+<!--    <aop:config>-->
+<!--&lt;!&ndash;        自定义截面&ndash;&gt;-->
+<!--        <aop:aspect ref="diyPoint">-->
+<!--&lt;!&ndash;            插入点&ndash;&gt;-->
+<!--            <aop:pointcut id="point" expression="execution(* com.kuang.pojo.UserServiceImpl.*(..))"/>-->
+<!--&lt;!&ndash;            通知&ndash;&gt;-->
+<!--            <aop:after method="After" pointcut-ref="point"/>-->
+<!--            <aop:before method="Before" pointcut-ref="point"/>-->
+<!--        </aop:aspect>-->
+
+<!--    </aop:config>-->
+    <bean id="annotationdiy" class="com.kuang.pojo.AnnotationDiy"/>
+    <aop:aspectj-autoproxy>
+
+    </aop:aspectj-autoproxy>
+</beans>

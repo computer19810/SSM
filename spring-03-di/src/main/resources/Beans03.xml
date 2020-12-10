@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="address" class="com.kuang.pojo.Address">
+        <property name="address" value="中国"/>
+    </bean>
+    <bean id="student" class="com.kuang.pojo.student">
+        <property name="name" value="学生的名字"/>
+        <property name="address" ref="address"/>
+        <property name="books">
+            <array>
+                <value>西游记</value>
+                <value>红楼梦</value>
+                <value>水浒传</value>
+            </array>
+        </property>
+        <property name="hobbys">
+            <list>
+                <value>听歌</value>
+                <value>看电影</value>
+                <value>下棋</value>
+            </list>
+        </property>
+        <property name="card">
+            <map>
+                <entry key="神风证" value="123456789"/>
+                <entry key="银行卡" value="123412341234"/>
+            </map>
+        </property>
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>NON</value>
+                <value>IOI</value>
+            </set>
+        </property>
+        <property name="wife">
+            <null/>
+        </property>
+        <property name="info">
+            <props>
+                <prop key="学号">123455</prop>
+                <prop key="username">root</prop>
+                <prop key="password">asdfasdf</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
+
+
+<!--student{
+
+name='学生的名字',
+address=Address{address='中国'},
+books=[西游记, 红楼梦, 水浒传],
+hobbys=[听歌, 看电影, 下棋],
+card={神风证=123456789, 银行卡=123412341234},
+games=[LOL, NON, IOI],
+wife='null',
+info={password=asdfasdf, 学号=123455, username=root}
+
+}
+
+-->

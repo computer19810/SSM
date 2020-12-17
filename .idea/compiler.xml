@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-03-di" />
+        <module name="springMVC-01" />
         <module name="spring-02-ioc02" />
         <module name="Mybatis-07" />
         <module name="spring-02-hello" />
         <module name="spring-05-autowired" />
         <module name="Mybatis-06" />
+        <module name="spring-10" />
         <module name="spring-08-proxy" />
         <module name="Mybatis-03" />
         <module name="Mybatis-02" />
@@ -21,9 +23,12 @@
         <module name="Mybatis-01" />
         <module name="spring-06-anno" />
         <module name="spring-09-aop" />
+        <module name="spring-11-trascation" />
         <module name="spring-07-appconfig" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="11">
+      <module name="untitled" target="6" />
+    </bytecodeTargetLevel>
   </component>
 </project>
